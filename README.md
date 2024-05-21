@@ -1,2 +1,2 @@
 # Basic-C-programs-
-meow
+Some C programs for practice :)
