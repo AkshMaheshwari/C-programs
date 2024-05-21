@@ -7,7 +7,7 @@ void main()
     FILE *fptr;
     int nc=0,nl=1;
     char ch;
-    fptr=fopen("test.txt","r");
+    fptr=fopen("test.txt","r");//you will have to create a test file of name test.txt in the same folder for this code to run
     ch=getc(fptr);
     while(ch!=EOF)
     {
