@@ -1,5 +1,5 @@
 # Basic-C-programs-
-For FY's here are Some C programs for practice :)
+For FY's here are Some C and C++ programs for practice :)
 <br>
 Do make sure to practice some of the programs by yourself and then if you're stuck feel free to use the codes here 
 <br>
