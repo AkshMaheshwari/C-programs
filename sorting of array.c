@@ -1,74 +1,74 @@
+//sorting of array 
+
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
-
-void Asceningsort(int array[],int size)
+void ascending_sort(int arr[],int n)
 {
-  for (int i=0;i<=size;i++)
+  for(int i=0;i<n;i++)
     {
-      for (int j=0;j<=size;j++)
+      for(int j=i+1;j<n;j++)
         {
-          if(array[j]>array[j+1])
+          if(arr[i] > arr[j])
           {
-            int temp = array[j];
-            array[j] = array[j+1];
-            array[j+1] = temp;
-            
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
           }
         }
     }
-}
-void Descendingsort(int array[],int size)
-{
-  for (int i=0;i<=size;i++)
+  printf("Sorting array in ascending order results in :");
+  for(int i=0;i<n;i++)
     {
-      for (int j=0;j<=size;j++)
+      printf("%d ",arr[i]);
+    }
+}
+void descending_sort(int arr[],int n)
+{
+  for(int i=0;i<n;i++)
+    {
+      for(int j=i+1;j<n;j++)
         {
-          if(array[j]<array[j+1])
+          if(arr[i] < arr[j])
           {
-            int temp = array[j];
-            array[j] = array[j+1];
-            array[j+1] = temp;
-
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
           }
         }
     }
-}
-void printArray(int array[],int size)
-{
-  for (int i=0;i<size;i++)
+  printf("Sorting array in descending order results in :");
+  for(int i=0;i<n;i++)
     {
-      printf("%d ",array[i]);
+      printf("%d ",arr[i]);
     }
 }
+
 int main()
 {
-  int array[] ={9,6,7,4,3,2,5,1,8};
-  int size = sizeof(array)/sizeof(array[0]);
-  int t;
-  printf("Enter the type of sorting: 1)Ascending sort,2)Descending sort: ");
-  scanf("%d",&t);
-  switch (t)
+  int n;
+  printf("Enter size of the array: ");
+  scanf("%d",&n);
+  int arr[n];
+  printf("Enetr the elements of the array: ");
+  for(int i=0;i<n;i++)
+    {
+      scanf("%d",&arr[i]);
+    }
+  int choice;
+  printf("Enter 1)Ascending sort of array or 2)Descending sort of array: ");
+  scanf("%d",&choice);
+  switch(choice)
     {
       case 1:
-      Asceningsort(array,size);
-      printArray(array,size);
+      ascending_sort(arr,n);
       break;
 
       case 2:
-      Descendingsort(array,size);
-      printArray(array,size);
+      descending_sort(arr,n);
       break;
 
       default:
-      printf("Invalid input please enter 1 or 2 only: ");
-      
+      printf("Invalid choice");
+      break;
     }
-  
 }
-
-
-
-
-
-
