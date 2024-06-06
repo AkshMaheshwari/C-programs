@@ -1,0 +1,11 @@
+//Celcius to Fahrenheit
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+  float ctemp,ftemp;
+  printf("Enter the temperature in celsius: ");
+  scanf("%f",&ctemp);
+  ftemp = 1.8*ctemp +32;
+  printf("Temperature in Fahrenheit is: %.2f",ftemp);
+}
