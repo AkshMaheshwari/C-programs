@@ -1,39 +1,50 @@
-// Write a program to find the second largest element in an array.
-
 #include <stdio.h>
-#include <stdlib.h>
-void sort(int arr[],int n)
+int main ()
 {
-  for(int i=0;i<n;i++)
+    int n = 0, i = 0, largest1 = 0, largest2 = 0, temp = 0;
+
+    printf ("Enter the size of the array\n");
+    scanf ("%d", &n);
+    int array[n];
+    printf ("Enter the elements\n");
+    for (i = 0; i < n; i++)
     {
-      for(int j=i+1;j<n;j++)
+        scanf ("%d", &array[i]);
+    }
+
+    printf ("The array elements are : \n");
+    for (i = 0; i < n; i++)
+    {
+        printf ("%d\t", array[i]);
+    }
+
+    printf ("\n");
+
+    largest1 = array[0];
+    largest2 = array[1];
+
+    if (largest1 < largest2)
+    {
+        temp = largest1;
+        largest1 = largest2;
+        largest2 = temp;
+    }
+
+    for (int i = 2; i < n; i++)
+    {
+        if (array[i] > largest1)
         {
-          if(arr[i]>arr[j])
-          {
-            int temp=arr[i];
-            arr[i]=arr[j];
-            arr[j]=temp;
-          }
+            largest2 = largest1;
+            largest1 = array[i];
+        }
+        else if (array[i] > largest2 && array[i] != largest1)
+        {
+            largest2 = array[i];
         }
     }
-}
 
-int main()
-{
-  int n;
-  printf("Enter size of the array: ");
-  scanf("%d",&n);
-  int arr[n];
-  for(int i=0;i<n;i++)
-    {
-      scanf("%d",&arr[i]);
-    }
-  sort(arr,n);
-  if (n < 2) {
-          printf("Array doesn't have a second largest element.");
-      } else {
-          printf("The second largest element in the array is: %d", arr[n - 2]);
-      }
-      return 0;
-  
+    printf ("The FIRST LARGEST = %d\n", largest1);
+    printf ("THE SECOND LARGEST = %d\n", largest2);
+
+    return 0;
 }
